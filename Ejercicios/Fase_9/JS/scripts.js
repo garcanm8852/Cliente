@@ -153,6 +153,7 @@ function callEjercicio05() {
             // url: "http://www.omdbapi.com/?t=" + $("#idNombre").val() + "&type=" + $("select option:selected").val()
             url: "../JSON/leon.json",
             success: resultado => {
+                clean();
                 $("#Caratula").attr("src", resultado.Poster)
                 $("#Titulo").text(resultado.Title);
                 $("#Anyo").text(resultado.Year);
@@ -175,6 +176,7 @@ function callEjercicio05() {
                 $("#Idiomas").text(resultado.Language);
                 $("#Pais").text(resultado.Country);
 
+
             },
             error: fallo => {
                 alert("La serie o película que desea buscar no existe.");
@@ -182,4 +184,19 @@ function callEjercicio05() {
         })
     });
 
+    function clean() {
+        $("#Caratula").attr("src", "")
+        $("#Titulo").empty();
+        $("#Anyo").empty();
+        $("#Calificacion").empty();
+        $("#Fecha").empty();
+        $("#Duracion").empty();
+        $("#Generos").empty();
+        $("#Actores").empty();
+        $("#Trama").empty();
+        $("#Director").empty();
+        $("#Escritor").empty();
+        $("#Idiomas").empty();
+        $("#Pais").empty();
+    }
 }
