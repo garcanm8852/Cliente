@@ -1,0 +1,28 @@
+ 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.flex-container div {
+    margin: 10px;
+    background-color: cadetblue;
+    border-radius: 2px;
+    padding: 5px;
+    transition: all 1s;
+}
+
+.flex-container div:hover {
+    color: white;
+    background-color: midnightblue;
+    transition: all 1s;
+}
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 6 - Ejercicio 1</title>
+</head>
+<body>
+    <h1>Fase 6-1</h1>
+    <h2>Manuel Jesús García de Quirós Cánovas</h2>
+    <h3>12 de Diciembre de 2020</h3>
+    <p>Realiza un formulario donde se pueda introducir y enviar un DNI con letra. El formulario deberá
+        validar si la letra es correcta al:</p>
+    <ul>
+        <li>Perder el foco del campo de texto donde se introduce el DNI.</li>
+        <li>Enviar el formulario, cancelando el envío si el formato no es correcto.</li>
+    </ul>
+    <form action="">
+        <label for="NDI">DNI</label>
+        <input type="text" name="DNI" id="idDNI" minlength="9" maxlength="10" pattern="[0-9]{8}[a-zA-Z]{1}" title="El campo debe tener el formato DDDDDDL">
+        <input type="submit" value="Comprobar" onclick="">
+    </form>
+</body>
+</html>

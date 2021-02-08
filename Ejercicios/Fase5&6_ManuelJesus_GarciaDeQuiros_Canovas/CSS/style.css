@@ -1,0 +1,21 @@
+@media (max-width: 760px) {
+    button {
+        margin-top: 25px;
+    }
+
+    .navbar-dark .navbar-brand{
+        font-size: 12px;
+    }
+    .sep-responsive-15{
+        margin-top: 25px;
+    }
+  }
+
+
+.sep-t-25{
+    margin-top: 25px;
+}
+
+.white{
+    color: white!important;
+}

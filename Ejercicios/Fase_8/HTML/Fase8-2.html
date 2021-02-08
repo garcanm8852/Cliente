@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 8 Ejercicio 2</title>
+</head>
+
+<body>
+    <h1>Fase 8-2</h1>
+    <h2>Manuel Jesús García de Quirós Cánovas</h2>
+    <h3>31 de Enero de 2021</h3>
+    <input type="text" name="NPokemon" id="idPokemon">
+    <button onclick="buscar();">Buscar</button>
+
+    <div id="galeria">
+        
+    </div>
+
+    <script>
+        let gal = document.querySelector("#galeria");
+        let num = document.getElementById("idPokemon");
+        function buscar() {
+            fetch("https://pokeapi.co/api/v2/pokemon/" + num.value).then(response => {
+                return response.json();
+            }).then(response => {
+                imagen = document.createElement("img");
+                imagen.src = (`${response.sprites.front_default}`);
+                gal.appendChild(imagen);
+                console.log(response.sprites.front_default)
+                num.value="";
+            });
+        }
+
+    </script>
+</body>
+
+</html>

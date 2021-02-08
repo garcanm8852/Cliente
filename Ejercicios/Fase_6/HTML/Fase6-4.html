@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 6 - Ejercicio 4</title>
+</head>
+
+<body>
+    <h1>Fase 6-4</h1>
+    <h2>Manuel Jesús García de Quirós Cánovas</h2>
+    <h3>12 de Diciembre de 2020</h3>
+    <p>Realiza un formulario con dos elementos “select”. Al cambiar el primero, se actualizará el segundo.
+        <br>
+        Al enviar el formulario, se comprobará que ambos han sido marcados.
+        <br>
+        Cuando no tengan ninguna selección previa, los “select” mostrarán “Select no seleccionado”.
+        <br>
+        Los valores del primer “select” serán “Alicante”, “Castellón”, “Valencia”.
+        <br>
+        Por defecto no habrá ninguno seleccionado.
+    </p>
+
+    <ul>
+        <li>Para Alicante: “Alicante Capital”, “Elche”, “Orihuela”.
+        </li>
+        <li>Para Castellón: “Castellón Capital”, “Oropesa”, “Vinaroz”.</li>
+        <li>Para Valencia: “Valencia Capital”, “Torrent”, “Mislata”. (Aquí saldrá por defecto
+            seleccionado “Mislata”).</li>
+    </ul>
+
+    <form action="" id="idFormulario" onsubmit="this.disabled=true;" class="idFormulario">
+        <fieldset>
+            <legend>Selector de Provincia y Ciudad</legend>
+        
+            <select name="Provincia" id="idProvincia">
+                <option value="null">Select no seleccionado</option>
+                <option value="Alicante">Alicante</option>
+                <option value="Castellon">Castellón</option>
+                <option value="Valencia">Valencia</option> 
+            </select>
+            
+            <select name="Ciudades" id="idCiudades">
+                <option value="null">Select no seleccionado</option>
+            </select>
+            <input value="Comprobar Ciudad" onclick="ejercicio4();">
+
+        </fieldset>
+    </form>
+
+
+    <script src="../JS/Fase6.js"></script>
+    <script>CargarSelect();</script>
+
+</body>
+
+</html>

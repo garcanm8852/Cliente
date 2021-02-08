@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../JS/Fase6.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 6 - Ejercicio 2</title>
+</head>
+
+<body>
+    <h1>Fase 6-2</h1>
+    <h2>Manuel Jesús García de Quirós Cánovas</h2>
+    <h3>12 de Diciembre de 2020</h3>
+    <p>Realiza un formulario que pida una dirección de email y la valide antes de enviarla:</p>
+    <ul>
+        <li>Debe validar si el email sigue el formato texto@servidor.loquesea</li>
+        <li>Además de validar el formato anterior, debe comprobar que servidor.loquesea este como servidor
+            admitido en un array de servidores llamado “listaServidores”.
+            Dicho array debe ser definido a mano en el código.</li>
+    </ul>
+
+    <form action="" onsubmit="this.disabled=true;" id="idFormulario">
+        <label for="NEmail">Correo Electrónico</label>
+        <input type="email" name="NEmail" id="idEmail">
+        <input value="Comprobar" onclick="ejercicio2();">
+    </form>
+
+    
+
+</body>
+
+</html>

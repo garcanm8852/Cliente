@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <form action="../PHP/calculadora.php" method="post">
+        <select name="nAccion" id="idAccion">
+            <option value="Sumar" selected>Sumar</option>
+            <option value="Restar">Restar</option>
+            <option value="Multiplicar">Multiplicar</option>
+            <option value="Dividir">Dividir</option>
+        </select>
+        <br>
+        <label for="nValor1">Valor 1:</label>
+        <input type="text" name="nValor1" id="idValor1">
+        <br>
+        <label for="nValor2">Valor 2:</label>
+        <input type="text" name="nValor2" id="idValor2">
+        <br>
+        <input type="submit" value="Proceder">
+    </form>
+</body>
+
+</html>

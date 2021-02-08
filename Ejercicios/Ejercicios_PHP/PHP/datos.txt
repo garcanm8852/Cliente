@@ -1,0 +1,11 @@
+Nombre:asdasd
+Dirección:asdasd
+Cantidad de Jamón y Queso:1
+Precio: 9.5€
+Cantidad de Napolitana:2
+Precio: 10.5€
+Cantidad de Muzzarella:3
+Precio: 16.5€
+--------------------------------------------------------
+Precio final del pedido:36.5€
+--------------------------------------------------------

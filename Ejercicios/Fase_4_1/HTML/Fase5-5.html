@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../CSS/Fase5.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 5-5</title>
+</head>
+
+<body id="Cuerpo">
+    <h1>Fase 5-5</h1>
+    <h2>Manuel Jesús García de Quirós Cánovas</h2>
+    <h3>25 de Noviembre de 2020</h3>
+    <p>Realizar un evento que muestre la url que tiene asociada cada imagen, cada vez que se pase el ratón
+        por encima de ella.</p>
+    <h2 id="url">La URL aparecerá aquí</h2>
+    <div class="flex-container">
+        <div>
+            <figure>
+                <img onmouseout="Texto();" onmouseover="UbicacionArchivo(this.src);" src="../IMG/andromeda.jpg" alt="">
+                <caption>Andromeda</caption>
+            </figure>
+        </div>
+        <div>
+            <figure>
+                <img onmouseout="Texto();" onmouseover="UbicacionArchivo(this.src)" src="../IMG/vialactea.jpeg" alt="">
+                <caption>Via Lactea</caption>
+            </figure>
+        </div>
+        <div>
+            <figure>
+                <img onmouseout="Texto();" onmouseover="UbicacionArchivo(this.src)" src="../IMG/magallanes.jpg"
+                    alt="../">
+                <caption>La nube de Magallanes</caption>
+            </figure>
+        </div>
+    </div>
+    <script src="../JS/Fase5.js"></script>
+
+</body>
+
+</html>
