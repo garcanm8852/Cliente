@@ -142,3 +142,44 @@ function callEjercicio04() {
  * Ejercicio 05
  * 
  */
+
+function callEjercicio05() {
+
+    $("#Buscar").click(function() {
+        $.ajax({
+            method: "get",
+            dataType: "json",
+            // La URL necesita una API KEY. Para ello hemos utilizado un extracto de una busqueda en un archivo json (leon.json) debido a que la petición será denegada sin la Clave.
+            // url: "http://www.omdbapi.com/?t=" + $("#idNombre").val() + "&type=" + $("select option:selected").val()
+            url: "../JSON/leon.json",
+            success: resultado => {
+                $("#Caratula").attr("src", resultado.Poster)
+                $("#Titulo").text(resultado.Title);
+                $("#Anyo").text(resultado.Year);
+                $("#Calificacion").text(resultado.Rated);
+                $("#Fecha").text(resultado.Released);
+                $("#Duracion").text(resultado.Runtime);
+                resultado.Genre.split(", ").forEach(element => {
+                    auxLi = document.createElement("li");
+                    auxLi.appendChild(document.createTextNode(element));
+                    $("#Generos").append(auxLi);
+                });
+                resultado.Actors.split(", ").forEach(element => {
+                    auxLi = document.createElement("li");
+                    auxLi.appendChild(document.createTextNode(element));
+                    $("#Actores").append(auxLi);
+                });
+                $("#Trama").text(resultado.Plot);
+                $("#Director").text(resultado.Director);
+                $("#Escritor").text(resultado.Writer);
+                $("#Idiomas").text(resultado.Language);
+                $("#Pais").text(resultado.Country);
+
+            },
+            error: fallo => {
+                alert("La serie o película que desea buscar no existe.");
+            }
+        })
+    });
+
+}
