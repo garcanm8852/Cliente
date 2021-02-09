@@ -86,20 +86,40 @@ usuario, separados por coma
 https://servicios.elpais.com/sorteos/loteria-navidad/api/
  */
 function callEjercicio03() {
-    palindrome("")
+    aux = 0;
     $.ajax({
         method: "get",
         dataType: "json",
-        url: "https://api.elpais.com/ws/LoteriaNavidadPremiados?n=resumen[0].numero1",
+        //El 
+        // url: "https://api.elpais.com/ws/LoteriaNavidadPremiados?n=resumen",
+        url: "../JSON/elpais.json",
         success: resultado => {
-            for (let i = 0; i < 13; i++) {
-
-            }
+            document.createElement("li")
+            $.each(resultado, function(i, numero) {
+                if (aux > 1 && aux < 15) {
+                    auxLi = document.createElement("li");
+                    auxLi.appendChild(document.createTextNode(numero))
+                    $("#Lista").append(auxLi);
+                    if (palindrome(numero.toString()) == true) {
+                        $("#Palindromos").append(auxLi)
+                        $("#cantPalindromos").text(parseInt($("#cantPalindromos").text()) + 1)
+                    }
+                    if (isPrime(numero) == true) {
+                        $("#Primos").append(auxLi)
+                        $("#cantPrimos").text(parseInt($("#cantPrimos").text()) + 1)
+                    }
+                    console.log(numero);
+                }
+                aux++;
+            });
+            console.log(resultado)
         },
         error: fallo => {
             alert("A fallado");
         }
     })
+
+
 }
 
 function palindrome(str) {
@@ -127,8 +147,18 @@ function callEjercicio04() {
     $.ajax({
         method: "get",
         dataType: "json",
+        //Debido a que la API de codeforces bloquea las peticiones entrates, hemos cogido 
+        //la petición y la hemos guardado en un fichero JSON 
+        //para así proceder a su uso.
         url: "../JSON/contest.json",
         success: resultado => {
+            for (let i = 0; i < resultado.result.length; i++) {
+                if (resultado.result[i].season == "2012-2013") {
+                    auxLi = document.createElement("li");
+                    auxLi.appendChild(document.createTextNode(resultado.result[i].name));
+                    $("#Lista").append(auxLi);
+                }
+            }
             console.log(resultado);
         },
         error: fallo => {
@@ -140,7 +170,9 @@ function callEjercicio04() {
 /**
  * 
  * Ejercicio 05
- * 
+ * Usando https://www.omdbapi.com/ realiza una página que te permita elegir
+entre películas o series y de ahí te permita buscar las películas/series de un año
+concreto que introduzca el usuario.
  */
 
 function callEjercicio05() {
