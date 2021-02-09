@@ -28,39 +28,32 @@
                 $username = "consult";
                 $password = "x9KbunRg3NVrGyyc";
 
-                $emailbusca = $_REQUEST['mail'];
-
-                $mysqli = new mysqli($host, $username, $password, $dbname);
-                if ($mysqli->connect_errno) {
-                    echo "Falló la conexión a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                $conexion = mysqli_connect($host, $username, $password, $dbname) or
+                die("Problemas con la conexión");
+            
+              $registros = mysqli_query($conexion, "select codigo,nombre,codigocurso
+                                    from alumnos where mail='$_REQUEST[mail]'") or
+                die("Problemas en el select:" . mysqli_error($conexion));
+            
+              if ($reg = mysqli_fetch_array($registros)) {
+                echo "Nombre:" . $reg['nombre'] . "<br>";
+                echo "Curso:";
+                switch ($reg['codigocurso']) {
+                  case 1:
+                    echo "PHP";
+                    break;
+                  case 2:
+                    echo "ASP";
+                    break;
+                  case 3:
+                    echo "JSP";
+                    break;
                 }
-
-                $sentencia = $mysqli->prepare("call consultaAlumno(?)");
-                $sentencia->bind_param("s", $emailbusca);
-                $sentencia->execute();
-                $arr = $sentencia->get_result();
-                if ($fila = $arr->fetch_assoc()) {
-                    echo "Codigo:" . $fila['nombre'] . "<br>";
-                    echo "Nombre:" . $fila['mail'] . "<br>";
-                    echo "Curso:";
-                    switch ($fila['codigocurso']) {
-                        case 1:
-                            echo "PHP";
-                            break;
-                        case 2:
-                            echo "ASP";
-                            break;
-                        case 3:
-                            echo "JSP";
-                            break;
-                    }
-                    echo "<br>";
-                    echo "<hr>";
-                } else {
-                    echo "No existe un alumno con ese mail.";
-                }
-
-                ?>
+              } else {
+                echo "No existe un alumno con ese mail.";
+              }
+              mysqli_close($conexion);
+              ?>
 
             </div>
         </div>

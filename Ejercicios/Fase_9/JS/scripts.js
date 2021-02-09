@@ -157,7 +157,8 @@ function callEjercicio04() {
         //Debido a que la API de codeforces bloquea las peticiones entrates, hemos cogido 
         //la petición y la hemos guardado en un fichero JSON 
         //para así proceder a su uso.
-        url: "../JSON/contest.json",
+        // url: "../JSON/contest.json",
+        url: "https://codeforces.com/api/contest.list?gym=true",
         success: resultado => {
             for (let i = 0; i < resultado.result.length; i++) {
                 if (resultado.result[i].season == "2012-2013") {
@@ -189,8 +190,8 @@ function callEjercicio05() {
             method: "get",
             dataType: "json",
             // La URL necesita una API KEY. Para ello hemos utilizado un extracto de una busqueda en un archivo json (leon.json) debido a que la petición será denegada sin la Clave.
-            // url: "http://www.omdbapi.com/?t=" + $("#idNombre").val() + "&type=" + $("select option:selected").val()
-            url: "../JSON/leon.json",
+            url: "http://www.omdbapi.com/?apikey=95f1666a&t=" + $("#idNombre").val() + "&y=" + $("#idAnyo").val() + "&type=" + $("select option:selected").val(),
+            // url: "../JSON/leon.json",
             success: resultado => {
                 clean();
                 $("#Caratula").attr("src", resultado.Poster)
