@@ -122,13 +122,20 @@ function callEjercicio03() {
 
 }
 
+/**
+ * Función que se encarga de buscar si una cadena de texto es palíndroma.
+ * @param {Buscador de palíndromo} str 
+ */
 function palindrome(str) {
     var re = /[\W_]/g;
     var lowRegStr = str.toLowerCase().replace(re, '');
     var reverseStr = lowRegStr.split('').reverse().join('');
     return reverseStr === lowRegStr;
 }
-
+/**
+ * Función que se encarga de buscar si un número es primo
+ * @param {Número a buscar} num 
+ */
 function isPrime(num) {
     for (var i = 2; i < num; i++)
         if (num % i === 0) return false;
