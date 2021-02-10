@@ -184,7 +184,6 @@ concreto que introduzca el usuario.
  */
 
 function callEjercicio05() {
-
     $("#Buscar").click(function() {
         $.ajax({
             method: "get",
