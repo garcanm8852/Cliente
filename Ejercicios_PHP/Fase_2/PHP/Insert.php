@@ -11,7 +11,7 @@
       <div class="col-md-12">
         <h1>Fase 1 - Ejercicio Insert - Respuesta</h1>
         <h2>Manuel Jesús García de Quirós Cánovas</h2>
-        <h3>10 de Febrero de 2021</h3>
+        <h3>26 de Febrero de 2021</h3>
         <p></p>
       </div>
     </div>
@@ -28,14 +28,15 @@
         $dbname = "base1";
         $username = "insert";
         $password = "5dBNNMY8vXdd8ZDn";
-
         $unombre = $_REQUEST['nombre'];
         $umail = $_REQUEST['mail'];
         $ucodigocurso = $_REQUEST['codigocurso'];
+        $sentencia = "call insertarAlumnos(?,?,?)";
+
 
         $mysqli = new mysqli($host, $username, $password, $dbname);
 
-        $sentencia = $mysqli->prepare("INSERT INTO `alumnos`(`nombre`, `mail`, `codigocurso`) VALUES (?,?,?)");
+        $sentencia = $mysqli->prepare($sentencia);
         $sentencia->bind_param("ssi", $unombre, $umail, $ucodigocurso);
 
         $sentencia->execute();

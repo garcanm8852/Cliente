@@ -11,7 +11,7 @@
       <div class="col-md-12">
         <h1>Fase 1 - Ejercicio 21 (Listado)</h1>
         <h2>Manuel Jesús García de Quirós Cánovas</h2>
-        <h3>10 de Febrero de 2021</h3>
+        <h3>26 de Febrero de 2021</h3>
         <p></p>
       </div>
     </div>
@@ -27,12 +27,13 @@
         $dbname = "base1";
         $username = "consult";
         $password = "x9KbunRg3NVrGyyc";
+        $mail = $_REQUEST["mail"];
+        $sentencia= "call consultarAlumno('$mail')";
 
         $conexion = mysqli_connect($host, $username, $password, $dbname) or
           die("Problemas con la conexión");
 
-        $registros = mysqli_query($conexion, "select codigo,nombre,codigocurso
-                                    from alumnos where mail='$_REQUEST[mail]'") or
+        $registros = mysqli_query($conexion, $sentencia) or
           die("Problemas en el select:" . mysqli_error($conexion));
 
         if ($reg = mysqli_fetch_array($registros)) {

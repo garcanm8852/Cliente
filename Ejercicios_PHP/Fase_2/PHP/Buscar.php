@@ -60,9 +60,9 @@
         <div class="contenido container mt-3">
             <form action="../PHP/Modificar.php" method="post" class="w-100">
                 <label for="mail" class="w-100">Ingrese el nuevo mail:</label>
-                <input type="text" name="mailNuevo" class="w-100" value="<?php echo $reg['mail'] ?>"><br>
+                <input type="text" name="mailNuevo" class="w-100" value=""><br>
                 <label for="mail" class="w-100">Antiguo mail:</label>
-                <input type="text" name="mailAntiguo" class="w-100" value="<?php echo $reg['mail'] ?>" disabled><br>
+                <input type="text" name="mailAntiguo" class="w-100" value="<?php echo $mail ?>"><br>
                 <br>
                 <input type="submit" value="Modificar" class="w-100 mt-3">
             </form>

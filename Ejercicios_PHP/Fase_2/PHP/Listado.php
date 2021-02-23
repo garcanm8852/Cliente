@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <h1>Fase 1 - Ejercicio 21 (Listado)</h1>
                 <h2>Manuel Jesús García de Quirós Cánovas</h2>
-                <h3>10 de Febrero de 2021</h3>
+                <h3>26 de Febrero de 2021</h3>
                 <p></p>
             </div>
         </div>
